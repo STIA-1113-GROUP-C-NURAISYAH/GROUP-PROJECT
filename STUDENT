@@ -342,3 +342,62 @@ public class student {
 		                      
 		                       
 		                }
+
+//OUTPUT
+
+Based on the info please key in your choice in the next question.
+------------------------------------------------------- 
+ For Malaysian please key in number 0 
+ For foreigner please key in number 1 
+------------------------------------------------------- 
+Please key in your nationality : 
+1
+Foreigner
+Welcome to UUM Portal.
+Please make sure you complete all part.
+---------PART 1---------
+
+Please key in your detail
+Name: 
+ALYS
+Semester: 
+2
+Based on the info below please answer the next question.
+---------------------------------------------------------------------------------------------------------------------
+For foreigner/International Student you are given only one choice of residential college to choose:
+  OPTION 1 - SYED RESIDENTIAL COLLEGE
+NOTES: THE SYED RESIDENTIAL COLLEGE WILL CHARGE YOU THREE TIMES MORE THAN ZAIN RESIDENTIAL COLLEGE PRICE
+---------------------------------------------------------------------------------------------------------------------
+Please key in your choice:
+1
+Your current balance fee is: 482.97
+The balance fee that you need to pay is: 482.97
+---------PART II---------
+Based on the info below please answer the next question.
+-----------COCURICULUM MARK RANGE-----------
+Number 1- TOTAL COCURICULUM MARK FROM 0 TO 10
+Number 2- TOTAL COCURICULUM MARK FROM 11 TO 20
+Number 3- TOTAL COCURICULUM MARK FROM 21 TO 30
+Number 4- TOTAL COCURICULUM MARK FROM 31 TO 40
+Number 5- TOTAL COCURICULUM MARK FROM 41 TO 50
+Number 6- TOTAL COCURICULUM MARK FROM 51 TO 60
+Number 7- TOTAL COCURICULUM MARK FROM 61 TO 69
+Number 8- TOTAL COCURICULUM MARK FROM 70 TO 80
+Number 9- TOTAL COCURICULUM MARK FROM 80 TO 90
+Number 10- TOTAL COCURICULUM MARK FROM 90 TO 100
+Please key in the number based on the range of your total cocuriculum mark:
+8
+TOTAL COCURICULUM MARK FROM 70 TO 80
+Congratulation you have successfully receive 80% discount.
+The system will calculate your balance fee
+The balance fee that you need to pay is: 96.59
+--------------------------------------------------------------------
+
+Student's Details
+Name: 	 	 	 	 	ALYS
+Semester: 	 	 	 	2
+Nationality: 	 	 		Foreigner 
+College Residential choice: 	 	1
+Total Balance Fee: 	 	 	RM96.59400000000001
+
+---------------------------------------------------------------------
