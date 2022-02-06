@@ -1,0 +1,331 @@
+//TANG WEI CHIANG (286841)
+//CODING
+
+import java.util.Scanner;
+public class course {
+
+	private static Scanner sc;
+	//Main method
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		userinfo();
+		registeredcourse();
+		secondlevelcourse();
+		registrationconfirmation();
+	}
+	
+	//User info method
+	public static void userinfo() {
+		sc = new Scanner (System.in);
+		
+		System.out.println("Welcome!");
+		System.out.println("We would like to know your information.");
+		System.out.print("Enter your name: ");
+		String name = sc.nextLine();
+		System.out.print("Enter your id: ");
+		String id = sc.next();
+		System.out.print("Enter your semester: ");
+		String sem = sc.next();
+		System.out.println();
+		
+		String ui [][] = {{"Name\t: ", "ID\t: ", "Semester: "}, 
+						  {name, id, sem}};
+		
+		userINFO(ui);
+		System.out.println();
+	}
+	
+	public static void userINFO(String UI [][]) {
+		System.out.println("USER INFO:");
+		System.out.println(UI[0][0] + UI[1][0]);
+		System.out.println(UI[0][1] + UI[1][1]);
+		System.out.println(UI[0][2] + UI[1][2]);
+	}
+	
+	//Registered course method
+	public static void registeredcourse() {
+		sc = new Scanner (System.in);
+
+		System.out.print("REGISTERED COURSE:\n");
+		System.out.println("You've registered 3 courses in last semester");
+		System.out.println("These are the courses that you've registered.");
+		for (int i = 0; i < 60; i++) {
+			System.out.print("_");
+		}
+		System.out.println();
+		
+		int course [] = {1,2,3};
+		String cName [] = {"STIA1113", "STQS1023", "STQM1203"};
+		int t1 [] = {36,20,15};
+		int t2 [] = {36,20,15};
+		int cw [] = {18,16,14};
+		int totMark [] = {90,56,44};
+		double GPA [] = {4.00,2.33,1.33};
+		int attTime [] = {18,15,20};
+		int totAttTime = 20;
+
+		for(int i=0; i<course.length; i++) {
+			System.out.println("\nCourse " +course[i]+ "\t\t\t: " +cName[i]);
+			System.out.println("Test 1 Marks\t\t\t: " +t1[i]+ "%");
+			System.out.println("Test 2 Marks\t\t\t: " +t2[i]+ "%");
+			System.out.println("Coursework Marks\t\t: " +cw[i]+ "%");
+			System.out.println("Total Marks\t\t\t: " +totMark[i]+ "%");
+			System.out.printf("GPA\t\t\t\t: %.2f\n" ,GPA[i]);
+			System.out.println("Attended Times\t\t\t: " +attTime[i]);
+			System.out.println("Maximum Attended Times\t\t: " +totAttTime+ " days");
+			System.out.println("Attendance rate\t\t\t: " +((double) attTime[i] / totAttTime)*100+ "%");
+		}
+		
+		for (int i = 0; i < 60; i++) {
+			System.out.print("_");
+		}
+		System.out.println();
+	}
+
+	// Second level course registration method
+	public static void secondlevelcourse() {
+		sc = new Scanner (System.in);
+		
+		int minAttRate = 80;
+		double minGPA = 2.00;
+		String cName [] = {"STIA1113", "STQS1023", "STQM2103"};
+		String scdCName [] = {"STIA1123", "STQS1023", "STQM1203"};
+		int totAttTime = 20;
+		double GPA [] = {4.00,2.33,1.33};
+		double att1 = (double) 18 / totAttTime;
+      	double attRate1 = att1 * 100;
+      	double att2 = (double) 15 / totAttTime;
+      	double attRate2 = att2 * 100;
+      	double att3 = (double) 20 / totAttTime;
+      	double attRate3 = att3 * 100;
+		
+		System.out.println("Which second-level course you would like to register?");
+		System.out.println("Press:\n (1) STIA1123 \n (2) STID3113 \n (3) STQM2103");
+		System.out.print("Your answer: ");
+		int scdLvlCourse = chooseCourse();
+		System.out.println();
+		
+		while((!(scdLvlCourse == 1)) && (!(scdLvlCourse == 2)) && (!(scdLvlCourse == 3))){	
+			System.out.println("Invalid course.");
+			System.out.print("Please enter a valid number (1-3): ");
+			scdLvlCourse = sc.nextInt();
+			System.out.println();
+			}
+
+		if(scdLvlCourse == 1){
+			System.out.println(scdCName[0]+ " requirements: ");
+			System.out.println("Completed STIA1113 with GPA " +String.format("%.2f",minGPA)+ 
+							" and attendance rate " +minAttRate+ "% or above.");
+			System.out.println(); 
+			System.out.printf(cName[0]+ " GPA\t\t: %.2f\n" ,GPA[0]);
+			System.out.println(cName[0]+ " Attendance Rate: " +attRate1+ "%");
+			
+			if ((GPA[0]>=2.00) && (attRate1>=80)) {
+				System.out.print("You've passed the GPA and attendance rate requirements.\n");
+				System.out.print(scdCName[0]+ " registered successfully!\n");
+			}
+	
+			else if ((GPA[0]>=2.00) && (attRate1<=79)) {
+				System.out.print("You've passed the GPA requirement but failed to fulfilled "
+						+ "attendance rate, please retake the course.\n");
+			}
+	
+			else if ((GPA[0]<=1.99) && (attRate1>=80)) {
+				System.out.print("You've passed the attendance rate requirement but failed to "
+						+ "fulfilled GPA, please retake the course.\n");
+			}
+			
+			else {
+				System.out.print("You've failed both GPA and attendance rate requirements, "
+						+ "please retake the course.\n");
+			}
+		}
+		
+		else if(scdLvlCourse == 2){
+			System.out.println(scdCName[1]+ " requirements: ");
+			System.out.println("Completed STQS1023 with GPA " +String.format("%.2f",minGPA)+ 
+							" and attendance rate " +minAttRate+ "% or above.");
+			System.out.println(); 
+			System.out.printf(cName[1]+ " GPA\t\t: %.2f\n" ,GPA[1]);
+			System.out.println(cName[1]+ " Attendance Rate: " +attRate2+ "%");
+			
+			if ((GPA[1]>=2.00) && (attRate2>=80)) {
+				System.out.print("You've passed the GPA and attendance rate requirements.\n");
+				System.out.print(scdCName[0]+ " registered successfully!\n");
+			}
+		
+			else if ((GPA[1]>=2.00) && (attRate2<=79)) {
+				System.out.print("You've passed the GPA requirement but failed to fulfilled "
+							+ "attendance rate, please retake the course.\n");
+			}
+		
+			else if ((GPA[1]<=1.99) && (attRate2>=80)) {
+				System.out.print("You've passed the attendance rate requirement but failed to "
+							+ "fulfilled GPA, please retake the course.\n");
+			}
+			else {
+				System.out.print("You've failed both GPA and attendance rate requirements, "
+							+ "please retake the course.\n");
+			}
+		}
+		
+		else if(scdLvlCourse == 3){
+			System.out.println(scdCName[2]+ " requirements: ");
+			System.out.println("Completed STQM1203 with GPA " +String.format("%.2f",minGPA)+ 
+							" and attendance rate " +minAttRate+ "% or above.");
+			System.out.println(); 
+			System.out.printf(cName[2]+ " GPA\t\t: %.2f\n" ,GPA[2]);
+			System.out.println(cName[2]+ " Attendance Rate: " +attRate3+ "%");
+			
+			if ((GPA[2]>=2.00) && (attRate3>=80)) {
+				System.out.print("You've passed the GPA and attendance rate requirements.\n");
+				System.out.print(scdCName[0]+ " registered successfully!\n");
+			}
+		
+			else if ((GPA[2]>=2.00) && (attRate3<=79)) {
+				System.out.print("You've passed the GPA requirement but failed to fulfilled "
+							+ "attendance rate, please retake the course.\n");
+			}
+		
+			else if ((GPA[2]<=1.99) && (attRate3>=80)) {
+				System.out.print("You've passed the attendance rate requirement but failed to "
+							+ "fulfilled GPA, please retake the course.\n");
+			}
+			else {
+				System.out.print("You've failed both GPA and attendance rate requirements, "
+							+ "please retake the course.\n");
+			}
+		}	
+	}
+	
+	public static int chooseCourse() {
+		sc = new Scanner (System.in);
+		int scdLvlCourse = sc.nextInt();
+		return scdLvlCourse;
+	}
+	
+	// Registration confirmation
+	public static void registrationconfirmation() {
+		sc = new Scanner (System.in);
+		
+		String answer = " ";
+		do {
+		System.out.print("\nDo you wish to register another course? (Y/N): ");
+		answer = sc.next();
+		System.out.println();
+			if ((answer.equals("y")) || (answer.equals("Y"))) {
+				secondlevelcourse();
+			} 
+		
+			else {
+				System.out.println("Thanks for using the system.");
+			}
+		}
+		while ((answer.equals("y")) || (answer.equals("Y")));	
+	}
+}
+
+//OUTPUT
+
+Welcome!
+We would like to know your information.
+Enter your name: TANG WEI CHIANG
+Enter your id: 286841
+Enter your semester: 2
+
+USER INFO:
+Name	: TANG WEI CHIANG
+ID	: 286841
+Semester: 2
+
+REGISTERED COURSE:
+You've registered 3 courses in last semester
+These are the courses that you've registered.
+____________________________________________________________
+
+Course 1			: STIA1113
+Test 1 Marks			: 36%
+Test 2 Marks			: 36%
+Coursework Marks		: 18%
+Total Marks			: 90%
+GPA				: 4.00
+Attended Times			: 18
+Maximum Attended Times		: 20 days
+Attendance rate			: 90.0%
+
+Course 2			: STQS1023
+Test 1 Marks			: 20%
+Test 2 Marks			: 20%
+Coursework Marks		: 16%
+Total Marks			: 56%
+GPA				: 2.33
+Attended Times			: 15
+Maximum Attended Times		: 20 days
+Attendance rate			: 75.0%
+
+Course 3			: STQM1203
+Test 1 Marks			: 15%
+Test 2 Marks			: 15%
+Coursework Marks		: 14%
+Total Marks			: 44%
+GPA				: 1.33
+Attended Times			: 20
+Maximum Attended Times		: 20 days
+Attendance rate			: 100.0%
+____________________________________________________________
+Which second-level course you would like to register?
+Press:
+ (1) STIA1123 
+ (2) STID3113 
+ (3) STQM2103
+Your answer: 1
+
+STIA1123 requirements: 
+Completed STIA1113 with GPA 2.00 and attendance rate 80% or above.
+
+STIA1113 GPA		: 4.00
+STIA1113 Attendance Rate: 90.0%
+You've passed the GPA and attendance rate requirements.
+STIA1123 registered successfully!
+
+Do you wish to register another course? (Y/N): y
+
+Which second-level course you would like to register?
+Press:
+ (1) STIA1123 
+ (2) STID3113 
+ (3) STQM2103
+Your answer: 0
+
+Invalid course.
+Please enter a valid number (1-3): 2
+
+STQS1023 requirements: 
+Completed STQS1023 with GPA 2.00 and attendance rate 80% or above.
+
+STQS1023 GPA		: 2.33
+STQS1023 Attendance Rate: 75.0%
+You've passed the GPA requirement but failed to fulfilled attendance rate, please retake the course.
+
+Do you wish to register another course? (Y/N): Y
+
+Which second-level course you would like to register?
+Press:
+ (1) STIA1123 
+ (2) STID3113 
+ (3) STQM2103
+Your answer: -1
+
+Invalid course.
+Please enter a valid number (1-3): 3
+
+STQM1203 requirements: 
+Completed STQM1203 with GPA 2.00 and attendance rate 80% or above.
+
+STQM2103 GPA		: 1.33
+STQM2103 Attendance Rate: 100.0%
+You've passed the attendance rate requirement but failed to fulfilled GPA, please retake the course.
+
+Do you wish to register another course? (Y/N): 0
+
+Thanks for using the system.
