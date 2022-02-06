@@ -1,0 +1,344 @@
+//NUR ALYA BINTI MOHD IZAZI (286814)
+//CODING
+
+import java.util.Scanner;
+public class student {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+	    int choice; double balanceFee; double collegeFee = 160.99; ; int sem; String nationality;
+		               
+		  
+		  String []national = {"Malaysia", "Foreigner"};
+		             
+		 
+		 
+		 
+		      System.out.println("Based on the info please key in your choice in the next question.");
+		      System.out.println("------------------------------------------------------- ");
+		      System.out.println(" For Malaysian please key in number 0 ");
+		      System.out.println(" For foreigner please key in number 1 ");
+		      System.out.println("------------------------------------------------------- ");
+		      System.out.println("Please key in your nationality : ");
+		      int number = scan .nextInt();
+		      System.out.println(national [number]);
+		    
+		   
+		             if (number==0){
+		        malaysian();
+		        
+		             }
+		             else if (number==1){
+		                 foreign();
+		                
+		                 
+		                 
+		             }
+		   
+		  
+		   
+		  
+		 }
+		 public static void foreign() {
+		            Scanner scan= new Scanner(System.in);
+		            
+		       
+		            int number; int choice; double balanceFee; double collegeFee = 160.99; String nationality; String name; int sem;
+		            
+		  System.out.println("Welcome to UUM Portal.");
+		  System.out.println("Please make sure you complete all part.");
+		  System.out.println("---------PART 1---------");
+		  System.out.println("\nPlease key in your detail");
+		  System.out.println("Name: ");
+		  name = scan.nextLine();
+		                
+		                
+		                System.out.println("Semester: ");
+		  sem = scan.nextInt();
+		                
+		              
+		              System.out.println("Based on the info below please answer the next question.");
+		                   System.out.println("---------------------------------------------------------------------------------------------------------------------");
+		                   System.out.println("For foreigner/International Student you are given only one choice of residential college to choose:");
+		                   System.out.println("  OPTION 1 - SYED RESIDENTIAL COLLEGE");
+		                   System.out.println("NOTES: THE SYED RESIDENTIAL COLLEGE WILL CHARGE YOU THREE TIMES MORE THAN ZAIN RESIDENTIAL COLLEGE PRICE");
+		                   System.out.println("---------------------------------------------------------------------------------------------------------------------");  
+		                   System.out.println("Please key in your choice:");
+		                   choice = scan.nextInt();
+		                   
+		                   
+		                   
+			             balanceFee = (collegeFee*3);
+			             balanceFee = balanceFee;
+			             System.out.println("Your current balance fee is: " +balanceFee);
+			          
+			     		 System.out.printf("The balance fee that you need to pay is: %.2f\n" ,balanceFee); 
+			     		
+		                
+		             System.out.println("---------PART II---------");
+		             System.out.println("Based on the info below please answer the next question.");
+		             System.out.println("-----------COCURICULUM MARK RANGE-----------");
+		             System.out.println("Number 1- TOTAL COCURICULUM MARK FROM 0 TO 10");
+		             System.out.println("Number 2- TOTAL COCURICULUM MARK FROM 11 TO 20");
+		             System.out.println("Number 3- TOTAL COCURICULUM MARK FROM 21 TO 30");
+		             System.out.println("Number 4- TOTAL COCURICULUM MARK FROM 31 TO 40");
+		             System.out.println("Number 5- TOTAL COCURICULUM MARK FROM 41 TO 50");
+		             System.out.println("Number 6- TOTAL COCURICULUM MARK FROM 51 TO 60");
+		             System.out.println("Number 7- TOTAL COCURICULUM MARK FROM 61 TO 69");
+		             System.out.println("Number 8- TOTAL COCURICULUM MARK FROM 70 TO 80");
+		             System.out.println("Number 9- TOTAL COCURICULUM MARK FROM 80 TO 90");
+		             System.out.println("Number 10- TOTAL COCURICULUM MARK FROM 90 TO 100");
+		System.out.println("Please key in the number based on the range of your total cocuriculum mark:");
+		                   number = scan.nextInt();   
+		       
+		                
+		        
+		                switch (number) {
+		                    case 1:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 0 TO 10");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 2:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 11 TO 20");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 3:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 21 TO 30");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 4:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 31 TO 40");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 5:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 41 TO 50");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 6:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 51 TO 60");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 7:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 61 TO 69");
+		                        System.out.println("Sorry you failed to get 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 8:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 70 TO 80");
+		                        System.out.println("Congratulation you have successfully receive 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 9:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 81 TO 90");
+		                        System.out.println("Congratulation you have successfully receive 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    case 10:
+		                        System.out.println("TOTAL COCURICULUM MARK FROM 91 TO 100");
+		                        System.out.println("Congratulation you have successfully receive 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                    default:
+		                        System.out.println("Please enter valid number");
+		                        System.out.println("Congratulation you have successfully receive 80% discount.");
+		                        System.out.println("The system will calculate your balance fee");
+		                        break;
+		                }
+		              
+		                if(number == 8 || number==9 || number==10){
+		                    balanceFee = (collegeFee*3);
+		                 balanceFee = (balanceFee*0.2);
+		        
+		              System.out.printf("The balance fee that you need to pay is: %.2f\n" ,balanceFee); 
+		                  
+		                
+		              
+		                
+		     
+		          System.out.println("--------------------------------------------------------------------");
+		          System.out.println();
+		          System.out.println("Student's Details");
+		          System.out.println("Name: \t \t \t \t \t" +name);
+		          System.out.println("Semester: \t \t \t \t" +sem);
+		          System.out.println("Nationality: \t \t \t\tForeigner ");
+		          System.out.println("College Residential choice: \t \t" +choice);
+		          System.out.println("Total Balance Fee: \t \t \tRM" +balanceFee);
+		          System.out.println();
+		          System.out.println("---------------------------------------------------------------------");
+		 }
+		                
+		 
+		 
+		                else {
+		                 balanceFee = (collegeFee*3);
+		              System.out.println("The balance fee that you need to pay is: " +balanceFee); 
+		              
+		              System.out.println("--------------------------------------------------------------------");
+		              System.out.println();
+		              System.out.println("Student's Details");
+		              System.out.println("Name: \t \t \t \t \t" +name);
+		              System.out.println("Semester: \t \t \t \t" +sem);
+		              System.out.println("Nationality: \t \t \t\tForeigner ");
+		              System.out.println("College Residential choice: \t \t" +choice);
+		              System.out.println("Total Balance Fee: \t \t \t" +balanceFee);
+		              System.out.println();
+		              System.out.println("---------------------------------------------------------------------");
+		                
+		                }
+		                }
+		 
+
+		 
+		               
+		 
+		 
+
+
+		             
+		        
+		        public static void malaysian(){
+		         int number; int choice;  double balanceFee = 0; double collegeFee = 160.99; int totalCocuMark = 0; String nationality; String name; int sem;
+		         Scanner scan = new Scanner(System.in);
+		         
+		  System.out.println("Welcome to UUM Portal.");
+		  System.out.println("Please make sure you complete all part.");
+		  System.out.println("---------PART 1---------");
+		  System.out.println("\nPlease key in your detail");
+		  System.out.println("Name: ");
+		  name = scan.nextLine();
+		                
+		                System.out.println("Semester: ");
+		                sem = scan.nextInt();
+		           
+		           System.out.println("Based on the info below please answer the next question.");
+		                System.out.println("---------------------------------------------------------------------------------------------------------------------");
+		                System.out.println("For Malaysian student you are given to choose your college residential based on the option given:                   ");
+		                System.out.println("  OPTION 1 - SYED RESIDENTIAL COLLEGE \nNotes: This option will charge three time more than option 2          ");
+		                System.out.println("  OPTION 2 - ZAIN RESIDENTIAL COLLEGE \t\tRM160.99                                                              ");
+		                System.out.println("---------------------------------------------------------------------------------------------------------------------");  
+		                System.out.println("Please key in your choice:");
+		                choice = scan.nextInt();
+		                
+		                
+		                if(choice != '1')
+		             {   
+		             balanceFee = (collegeFee);
+		             System.out.println("Your current balance fee is: " +balanceFee);
+		             }else if(choice =='1') {
+		              balanceFee = (collegeFee*3);
+		                 System.out.println("Your current balance fee is: " +balanceFee);
+		                 System.out.printf("The balance fee that you need to pay is: %.2f\n" ,balanceFee); 
+		             
+		             }
+		                
+		                System.out.println("---------PART II---------");
+		             System.out.println("Based on the info below please answer the next question.");
+		             System.out.println("-----------COCURICULUM MARK RANGE-----------");
+		System.out.println("Number 1- TOTAL COCURICULUM MARK FROM 0 TO 10");
+		             System.out.println("Number 2- TOTAL COCURICULUM MARK FROM 11 TO 20");
+		             System.out.println("Number 3- TOTAL COCURICULUM MARK FROM 21 TO 30");
+		             System.out.println("Number 4- TOTAL COCURICULUM MARK FROM 31 TO 40");
+		             System.out.println("Number 5- TOTAL COCURICULUM MARK FROM 41 TO 50");
+		             System.out.println("Number 6- TOTAL COCURICULUM MARK FROM 51 TO 60");
+		             System.out.println("Number 7- TOTAL COCURICULUM MARK FROM 61 TO 69");
+		             System.out.println("Number 8- TOTAL COCURICULUM MARK FROM 70 TO 80");
+		             System.out.println("Number 9- TOTAL COCURICULUM MARK FROM 80 TO 90");
+		             System.out.println("Number 10- TOTAL COCURICULUM MARK FROM 90 TO 100");
+		                System.out.println("Please key in the number based on the range of your total cocuriculum mark:");
+		             number = scan.nextInt();
+		           
+		                  
+		              switch (number) {
+		                 case 1:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 0 TO 10");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 2:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 11 TO 20");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 3:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 21 TO 30");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 4:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 31 TO 40");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 5:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 41 TO 50");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 6:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 51 TO 60");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 7:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 61 TO 69");
+		                     System.out.println("Sorry you failed to get 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 8:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 70 TO 80");
+		                     System.out.println("Congratulation you have successfully receive 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 9:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 81 TO 90");
+		                     System.out.println("Congratulation you have successfully receive 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 case 10:
+		                     System.out.println("TOTAL COCURICULUM MARK FROM 91 TO 100");
+		                     System.out.println("Congratulation you have successfully receive 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		                 default:
+		                     System.out.println("Please enter valid number");
+		                     System.out.println("Congratulation you have successfully receive 80% discount.");
+		                     System.out.println("The system will calculate your balance fee");
+		                     break;
+		              }
+		             
+		             
+		                      if(number ==8 || number==9 || number==10) {
+		                       balanceFee = (balanceFee*0.2);
+		                      }else {
+		                       balanceFee = balanceFee;
+		                    
+		                          System.out.printf("The balance fee that you need to pay is: %.2f\n" ,balanceFee); 
+		                      } 
+		                      
+		                       
+		               
+		              
+		                   
+
+		              System.out.println("--------------------------------------------------------------------");
+		              System.out.println();
+		              System.out.println("Student's Details");
+		              System.out.println("Name: \t \t \t \t \t" +name);
+		              System.out.println("Semester: \t \t \t \t" +sem);
+		              System.out.println("Nationality: \t \t \t\tMalaysia");
+		              System.out.println("College Residential choice: \t \t" +choice);
+		              System.out.println("Total Balance Fee: \t \t \t" +balanceFee);
+		              System.out.println();
+		              System.out.println("---------------------------------------------------------------------");
+		                      
+		                       }
+		                      
+		                       
+		                }
