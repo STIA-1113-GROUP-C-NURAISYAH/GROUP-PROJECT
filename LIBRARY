@@ -1,0 +1,193 @@
+//FARA AYEESHA BINTI AHMAD YUSNI (286941)
+//CODING
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class library {
+
+		 public static void main(String[] args) {
+		  // TODO Auto-generated method stub
+		
+		  Scanner sc = new Scanner(System.in);
+		  
+		  int yearCode;
+		  float totalFine;
+		  char excuse;
+		  float discountedFine = 0;
+		  int numBooks;
+		  String excuseDesc = " ";
+		  float bookFine;
+		  float sum = 0;
+		  
+		  String [] a;
+		  a = studentInfo();
+		  
+		  yearCode = Integer.parseInt(a[2]);
+		  
+		  System.out.println("Does the student have a valid excuse? Enter y or n");
+		  excuse = sc.nextLine().charAt(0);
+		  
+		  if (excuse == 'y') {
+		   System.out.println("Enter student's excuse. ");
+		   excuseDesc = sc.nextLine();
+		  }
+		  else
+		   System.out.println();
+		  
+		  do {
+		   System.out.println("Enter number of books late: ");
+		   numBooks = sc.nextInt();
+		   
+		  } while (!isValid(numBooks));
+		  
+		  String b[][];
+		  b = bookinfo(numBooks);
+		  
+		  int bookfee [][] = new int [100][];
+		  for (int i = 0; i < numBooks; i++) {
+		   bookfee[i] = new int [1];
+		   bookfee[i][0] = Integer.parseInt(b[i][2]);
+		  }
+		  
+		  System.out.println();
+		  
+		  System.out.println("=============================================================");
+		  System.out.println();
+		  System.out.println("*Student Info");
+		  
+		  System.out.println("Student's name: " + a[0]);
+		  System.out.println("Student's ID: " + a[1]);
+		  System.out.println("Student's year of study: " + a[2]);
+		  System.out.println();
+		
+		  System.out.println("*************************************************************");
+		  System.out.println("*Book Info");
+		  
+		  for (int i = 0; i < numBooks; i++) {
+		   System.out.println("Book " + (i + 1) + " title: " + b[i][0]);
+		   System.out.println("Book " + (i + 1) + " ISBN: " + b[i][1]);
+		   System.out.println("Number of days late for book " + (i + 1) + " : " + b[i][2]);
+		   System.out.printf("Fee for this book: RM" + "%.2f",(((float)bookfee[i][0] * (float)yearCode)) + (float)bookfee[i][0]);
+		   System.out.println();
+		   System.out.println();
+		  }
+		  
+		  for (int i = 0; i < numBooks; i++) {
+		   bookFine = bookfee[i][0] * yearCode;
+		   sum = sum + bookFine;
+		  }
+		  
+		  if (excuse == 'y') {
+		   totalFine = sum;
+		   discountedFine = (float) (totalFine * 0.8);
+		   System.out.println("Excuse: " + excuseDesc);
+		   System.out.printf("Total fee is: RM" + "%.2f",totalFine);
+		   System.out.println();
+		   System.out.printf("Discounted amount: RM" + "%.2f",(totalFine - discountedFine));
+		   System.out.println();
+		   System.out.printf("Total discounted fee is: RM" + "%.2f",discountedFine);
+		  }
+		  else {
+		   totalFine = sum;
+		   System.out.printf("Total fee is: RM" + "%.2f",totalFine);
+		  }
+		  System.out.println();
+		  
+		  System.out.println();
+		  System.out.println("*************************************************************");
+		  System.out.println();
+		  System.out.println("=============================================================");
+		
+		 }
+		 
+		 public static String[] studentInfo () {
+		  Scanner sc = new Scanner (System.in);
+		  String [] studentinfo = new String [3];
+		  
+		  System.out.println("Enter student's name, ID,"
+		  + "and year of study(separated by ENTER key): ");
+		  
+		  for (int i = 0; i < studentinfo.length; i++) {
+		   studentinfo[i] = sc.nextLine();
+		  }
+		  return studentinfo;
+		 }
+		 
+		 public static String[][] bookinfo (int x) {
+		  Scanner sc = new Scanner (System.in);
+		  String [][] bookinfo = new String [100][];
+		  for (int i = 0; i < x; i++) {
+		   bookinfo[i] = new String [3];
+		   System.out.println("Enter book title, book ISBN, and "
+		   + "number of days late of book " + (i + 1) + " (separated by ENTER key)");
+		   for (int j = 0; j < bookinfo[i].length; j++) {
+		    bookinfo[i][j] = sc.nextLine();
+		   }
+		  }
+		  return bookinfo;
+		 }
+		 
+		 public static boolean isValid (int b) {
+		  if (b > 3) {
+		   System.out.println("Maximum number of books allowed to be borrowed at a time is 3. Try again.");
+		   return false;
+		  }
+		  
+		  if (b < 1) {
+		   System.out.println("Number cannot be 0. Try again.");
+		   return false;
+		  }
+		  else return true;
+		 }
+		
+}
+
+//OUTPUT
+
+Enter student's name, ID,and year of study(separated by ENTER key): 
+Eri
+284912
+2
+Does the student have a valid excuse? Enter y or n
+y
+Enter student's excuse. 
+Out of State
+Enter number of books late: 
+2
+Enter book title, book ISBN, and number of days late of book 1 (separated by ENTER key)
+Girl A
+461849173812
+3
+Enter book title, book ISBN, and number of days late of book 2 (separated by ENTER key)
+Hayloft II
+718394718293
+1
+
+=============================================================
+
+*Student Info
+Student's name: Eri
+Student's ID: 284912
+Student's year of study: 2
+
+*************************************************************
+*Book Info
+Book 1 title: Girl A
+Book 1 ISBN: 461849173812
+Number of days late for book 1 : 3
+Fee for this book: RM9.00
+
+Book 2 title: Hayloft II
+Book 2 ISBN: 718394718293
+Number of days late for book 2 : 1
+Fee for this book: RM3.00
+
+Excuse: Out of State
+Total fee is: RM8.00
+Discounted amount: RM1.60
+Total discounted fee is: RM6.40
+
+*************************************************************
+
+=============================================================
