@@ -1,0 +1,198 @@
+//SITI NUR AISYAH BINTI ABDULLAH (286752)
+//CODING
+
+import java.util.ArrayList;
+import java.util.Scanner;
+public class employees {
+	
+	public static void welcome(){
+		
+		employees e=new employees();
+		System.out.println ("Welcome!");
+		System.out.println ("This system will help you to calculate your net salary.");
+		System.out.println ("Please enter your details and you may refer to the information below.");
+		System.out.println ("All information is entered into a system for future use. Thank you.");
+		String [] types= {"PERMANENT LECTURER", "CONTRACT LECTURER", "PTFT LECTURER"};
+		String [] workCode= {"DPL45","DCL51","DPP441"};
+		String [] hourSalary= {"RM132.00", "RM85.00", "RM63.00"};
+		String [] allow= {"RM900.00", "RM800.00","RM0.00"};
+		
+			for (int i=0;i<1;i++) {
+				e.line();
+				System.out.println ("|  TYPES OF LECTURER  |       " + types[0] + "     |   " + types[1] + "  |   " + types[2] + "   |");
+				e.line();
+				System.out.println ("|      WORK CODE      |             " + workCode[0] + "            |         " + workCode[1] + "        |      " + workCode[2] + "       |");
+				e.line();
+				System.out.println ("|   SALARY PER HOUR   |           " + hourSalary[0] + "           |        " + hourSalary[1] + "       |      " + hourSalary[2] + "      |");
+				e.line();
+				System.out.println ("|      ALLOWANCE      |           " + allow[0] + "           |        " + allow[1] + "      |       " + allow[2] + "      |");
+				e.line();
+			}
+		
+	}
+	
+	public static void line() {
+		for (int i=0; i<96; i++) {
+			System.out.print ("_");
+		}
+		System.out.println(" ");
+	}
+	
+	private String id,name,workCode,monthOfpayment;
+	private float basicSalary,epf,socso,allowance,amountOfdeduction,netsalary;
+	private long ic;
+	private int hour,salaryPerhour;
+	
+	public static void userinfo() {
+		Scanner sc=new Scanner(System.in);
+		String code1="DPL45";
+		String code2="DCL51";
+		String code3="DP441";
+		String code;
+		System.out.println();
+		System.out.println ("Enter your name:");
+		String name=sc.nextLine();
+		System.out.println ("Enter your identification card number:");
+		long ic=sc.nextLong();
+		
+		System.out.println ("Enter the month of payslip you want:");
+		ArrayList<String> monthOfpayment = new ArrayList<>();
+    		for(int i = 0; i < 1; i++) {
+    			monthOfpayment.add(sc.next());
+			}
+				
+		System.out.println ("Enter your work code:");
+		String workCode=sc.next();
+		if (workCode==code1) {
+			code="DPL45";
+		}
+		else if (workCode==code2) {
+			code="DCL51";
+		}
+		else if (workCode==code3) {
+			code="DP441";
+		}
+		
+		System.out.println ("Enter your hour of work for this month:");
+		int hour=sc.nextInt();
+		System.out.println ("Enter your salary per hour:");
+		System.out.print ("RM");
+		int salaryPerhour=sc.nextInt();
+		System.out.println ("Enter your allowance");
+		System.out.print ("RM");
+		double allowance=sc.nextDouble();
+		
+		double basicSalary=(salaryPerhour*hour)+allowance;
+		double epf=0.1*basicSalary;
+		double socso=0.005*basicSalary;
+		double amountOfdeduction=epf+socso;
+		
+		double netsalary=basicSalary-amountOfdeduction;
+	
+		
+		System.out.println("*****************************************************************************************");
+		System.out.println("				PAYSLIP "+ monthOfpayment + ", 2021");
+		System.out.println("*****************************************************************************************");
+		System.out.println ("NAME: "+name + "					WORK CODE: "+workCode);
+		System.out.println ("NRIC NO: "+ic);
+		System.out.println ();
+		System.out.printf ("===EARNINGS===");
+		System.out.println ();
+		System.out.printf ("BASIC SALARY: RM%.2f",basicSalary);
+		System.out.println ();
+		System.out.printf ("ALLOWANCE: RM%.2f", allowance);
+		System.out.println ("\n");
+		System.out.printf ("===DEDUCTION===");
+		System.out.println ();
+		System.out.printf ("EPF: RM%.2f",epf);
+		System.out.println ();
+		System.out.printf ("SOCSO: RM%.2f",socso);
+		System.out.println ();
+		System.out.printf ("AMOUNT OF DEDUCTION: RM%.2f",amountOfdeduction);
+		System.out.println ();
+		System.out.println("*****************************************************************************************");
+		System.out.printf ("			NET SALARY: RM%.2f",netsalary);
+		System.out.println ();
+		System.out.println("*****************************************************************************************");
+	}
+	
+	
+	public static void main(String[] args) {
+		Scanner sc=new Scanner (System.in);
+		char choose;
+			
+			employees e=new employees();
+			e.welcome();
+			e.userinfo();
+		
+			System.out.println ();
+			System.out.println ("Do you want to return to main menu?");
+			System.out.println ("Press Y considered as yes and N vice versa.");
+			choose=sc.next().charAt(0);
+			
+			if (choose=='y' || choose=='Y') {
+				MainMenu m = new MainMenu();
+				m.main(args);
+			}
+		do {
+			System.exit(0);
+		}
+		while (choose!='y' || choose!='Y');
+		
+		sc.close();
+	}
+	
+	
+}
+
+//OUTPUT
+
+Welcome!
+This system will help you to calculate your net salary.
+Please enter your details and you may refer to the information below.
+All information is entered into a system for future use. Thank you.
+________________________________________________________________________________________________ 
+|  TYPES OF LECTURER  |       PERMANENT LECTURER     |   CONTRACT LECTURER  |   PTFT LECTURER   |
+________________________________________________________________________________________________ 
+|      WORK CODE      |             DPL45            |         DCL51        |      DPP441       |
+________________________________________________________________________________________________ 
+|   SALARY PER HOUR   |           RM132.00           |        RM85.00       |      RM63.00      |
+________________________________________________________________________________________________ 
+|      ALLOWANCE      |           RM900.00           |        RM800.00      |       RM0.00      |
+________________________________________________________________________________________________ 
+
+Enter your name:
+AISYAH BINTI ABDULLAH
+Enter your identification card number:
+461781992490
+Enter the month of payslip you want:
+SEPTEMBER
+Enter your work code:
+DCL51
+Enter your hour of work for this month:
+63
+Enter your salary per hour:
+RM85
+Enter your allowance
+RM800
+*****************************************************************************************
+				PAYSLIP [SEPTEMBER], 2021
+*****************************************************************************************
+NAME: AISYAH BINTI ABDULLAH					WORK CODE: DCL51
+NRIC NO: 461781992490
+
+===EARNINGS===
+BASIC SALARY: RM6155.00
+ALLOWANCE: RM800.00
+
+===DEDUCTION===
+EPF: RM615.50
+SOCSO: RM30.78
+AMOUNT OF DEDUCTION: RM646.28
+*****************************************************************************************
+			NET SALARY: RM5508.73
+*****************************************************************************************
+
+Do you want to return to main menu?
+Press Y considered as yes and N vice versa.
+N
