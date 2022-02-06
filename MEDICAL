@@ -1,0 +1,421 @@
+//NIK MOHAMAD HANIS BIN NIK YAHYA (286961)
+//CODING
+
+import java.util.Scanner;
+
+public class medical {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner (System.in);
+		
+        double anxiety = 25.0;
+        double depression = 32.0;
+        double aCom = 2.25;
+        double aAcc = 1.50;
+        double dLaw = 3.52;
+        double dCom = 2.88;
+        
+        double computingA;
+        double accountA;
+        
+        double nlawD ;
+        double ncomputingA;
+        double ncomputingD;
+        double naccountA;
+
+        double lawD;
+        double computingD;
+        
+        System.out.println("This program will help you to calculate number of students of different school");
+        System.out.println("");
+        System.out.println("Based on the survey: ");
+        System.out.println("                    -Anxiety test    = " + anxiety + "%");
+        System.out.println("                    -Depression test = " + depression + "%");
+        System.out.println("                    -Anxiety test (School of Computing)     = " + aCom + "%");
+        System.out.println("                    -Anxiety test (School of Accounting)    = " + aAcc + "0%");
+        System.out.println("                    -Depression test (School of Law)        = " + dLaw + "%");
+        System.out.println("                    -Depression test (School of Computing)  = " + dCom + "%");
+        System.out.println("");
+        
+        System.out.print("Enter percentage of students have anxiety in School of Computing  = ");
+        computingA = sc.nextDouble();
+        System.out.print("Enter percentage of students have anxiety in School of Accounting = ");
+        accountA = sc.nextDouble();
+        System.out.println("");
+        
+        System.out.println("Percentage of students in School of Computing who have anxiety  = " + computingA + "%");
+        ncomputingA = (computingA/25) * 100;
+        System.out.println("Percentage of students in School of Accounting who have anxiety = " + accountA + "0%");
+        naccountA = (accountA/25) * 100;
+        
+        double nlb = 25 - (ncomputingA+naccountA)  ;
+        double nlawA = nlb/2 ;
+        double nbusinessA = nlb/2 ;
+        double lbpercent = (nlawA * 25) / 100 ;
+        
+        System.out.println("Percentage of students in School of Law who have anxiety        = " + lbpercent + "%");
+        System.out.println("Percentage of students in School of Business who have anxiety   = " + lbpercent + "%");
+        System.out.println("");
+        
+        System.out.print("Enter percentage of students have depression in School of Law       = ");
+        lawD = sc.nextDouble();
+        System.out.print("Enter percentage of students have depression in School of Computing = ");
+        computingD = sc.nextDouble();
+        System.out.println("");
+        
+        System.out.println("Percentage of students in School of Law who have depression          = " + lawD + "%");
+        nlawD = (lawD/32) * 100;
+        System.out.println("Percentage of students in School of Computing who have depression    = " + computingD + "%");
+        ncomputingD = (computingD/32) * 100;
+        
+        double nba = 32 - (nlawD+ncomputingD)  ;
+        double nbusinessD = nba/2 ;
+        double naccountD = nba/2 ;
+        double bapercent = (naccountD * 32) / 100 ;
+        
+        int a = (int) nlawA;
+        int b = (int) ncomputingA;
+        int c = (int) nbusinessA;
+        int d = (int) naccountA;
+        
+        int e = (int) nlawD;
+        int f = (int) ncomputingD;
+        int g = (int) nbusinessD;
+        int h = (int) naccountD;
+        
+        int aM =  0;
+        int bF =  6;
+        int cM =  1;
+        int dF =  4;
+        int eM =  4;
+        int fF =  5;
+        int gM =  2;
+        int hF =  3;
+        
+        int aF = a - 0;
+        int bM = b - 6;
+        int cF = c - 1;
+        int dM = d - 4;
+        
+        int eF = e - 4;
+        int fM = f - 5;
+        int gF = g - 2;
+        int hM = h - 3;
+        
+        System.out.println("Percentage of students in School of Business who have depression     = " + bapercent + "%");
+        System.out.println("Percentage of students in School of Accounting who have depression   = " + bapercent + "%");
+        System.out.println("");
+        
+        System.out.println("Here is the result : ");
+        System.out.println(" ");
+        System.out.println("Anxiety Test");
+        System.out.println(" ");
+        System.out.println(" ---------------------- " + " --------------------------- " + " -------------------------- " + " ----------------- " + " --------------- ");
+        System.out.println("|        School        |" + "| Percentage of students(%) |" + "| Total Number of students |" + "| Female students |" + "| Male students |");
+        System.out.println("|     School of Law    |" + "|            " + lbpercent +  "           |" + "|            "+   a +"             |" + "|        "+   aF +"        |" + "|        "+   aM +"      |");
+        System.out.println("|  School of Computing |" + "|            " + computingA + "           |" + "|            "+   b +"             |" + "|        "+   bF +"        |" + "|        "+   bM +"      |");
+        System.out.println("|  School of Business  |" + "|            " + lbpercent +  "           |" + "|            "+   c +"             |" + "|        "+   cF +"        |" + "|        "+   cM +"      |");
+        System.out.println("| School of Accounting |" + "|            " + accountA +   "            |" + "|            "+   d +"             |" + "|        "+   dF +"        |" + "|        "+   dM +"      |");
+        System.out.println(" ---------------------- " + " --------------------------- " + " -------------------------- " + " ----------------- " + " --------------- ");
+        
+        System.out.println(" ");
+        System.out.println("Depression Test");
+        System.out.println(" ");
+        System.out.println(" ---------------------- " + " --------------------------- " + " -------------------------- " + " ----------------- " + " --------------- ");
+        System.out.println("|        School        |" + "| Percentage of students(%) |" + "| Total Number of students |" + "| Female students |" + "| Male students |");
+        System.out.println("|     School of Law    |" + "|            " + lawD +  "           |" + "|            "+   e +"            |" + "|        "+   eF +"        |" + "|        "+   eM +"      |");
+        System.out.println("|  School of Computing |" + "|            " + computingD + "           |" + "|            "+   f +"             |" + "|        "+   fF +"        |" + "|        "+   fM +"      |");
+        System.out.println("|  School of Business  |" + "|            " + bapercent +  "           |" + "|            "+   g +"             |" + "|        "+   gF +"        |" + "|        "+   gM +"      |");
+        System.out.println("| School of Accounting |" + "|            " + bapercent +   "           |" + "|            "+   h +"             |" + "|        "+   hF +"        |" + "|        "+   hM +"      |");
+        System.out.println(" ---------------------- " + " --------------------------- " + " -------------------------- " + " ----------------- " + " --------------- ");
+        
+        System.out.println("Data below show the level of anxiety and depression of a student");
+        System.out.println("Anxiety level    : ");
+        System.out.println("                 0-5   -> minimal anxiety");
+        System.out.println("                 6-10  -> moderate anxiety");
+        System.out.println("                 11-20 -> severe anxiety");
+        System.out.println();
+        System.out.println("Depression level : ");
+        System.out.println("                 1-6   -> minimal depression");
+        System.out.println("                 7-12  -> moderate depression");
+        System.out.println("                 13-20 -> severe depression");
+        System.out.println();
+        System.out.println("Based on the table:");
+        StudentAnxiety();
+        passArraytomethodA.mainA(args); 
+        System.out.println();
+	    StudentDepress();
+	    passArraytomethodD.mainD(args);
+	}
+	
+        public int maxA(int [] array) {
+		      int maxA = 0;
+		      for(int i=0; i<array.length; i++ ) {
+		         if(array[i]>maxA) {
+		            maxA = array[i];
+		         }
+		      }
+		      return maxA;
+		   }
+
+        
+		public int minA(int [] array) {
+		      int minA = array[0];
+		   
+		      for(int i = 0; i<array.length; i++ ) {
+		         if(array[i]<minA) {
+		            minA = array[i];
+		         }
+		      }
+		      return minA;
+		   }
+
+		   
+		public class passArraytomethodA {
+		public static void mainA (String args[]) {
+			
+		      Scanner sc = new Scanner (System.in);
+		      int minAB = 0;
+	          int modAB = 0;
+	          int sevAB = 0;
+		      System.out.print("Enter total number of students who have anxiety : ");
+		      int size = sc.nextInt();
+		      int[] myArray = new int[size];
+		      System.out.println("Enter their score : ");
+
+		      for(int i=0; i<size; i++) {
+		    	 System.out.print("Result for the " + (i + 1) + " student (0-20) = ");
+		         myArray[i] = sc.nextInt();
+		         
+		         if (myArray[i] <= 5) {
+		        	 minAB += 1;
+	        	     }
+	            else if (myArray[i] <= 10 ) {
+	            	 modAB += 1;}
+	            else {
+	            	 sevAB += 1;}
+		      }
+		      
+		      medical m = new medical();
+		      System.out.println();
+			  System.out.println(minAB + "/" + "5 students in School of Business has minimal anxiety");
+			  System.out.println(modAB + "/" + "5 students in School of Business has moderate anxiety");
+			  System.out.println(sevAB + "/" + "5 students in School of Business has severe anxiety");
+			  System.out.println();
+		      System.out.println("The largest score : "+ m.maxA(myArray));
+		      System.out.println("The lowest score  : "+ m.minA(myArray));
+
+		    }
+
+        }
+		
+		 
+	        public int maxD(int [] array) {
+			      int maxD = 0;
+
+			      for(int i=0; i<array.length; i++ ) {
+			         if(array[i]>maxD) {
+			            maxD = array[i];
+			         }
+			      }
+			      return maxD;
+			   }
+
+			public int minD(int [] array) {
+			      int minD = array[0];
+			   
+			      for(int i = 0; i<array.length; i++ ) {
+			         if(array[i]<minD) {
+			            minD = array[i];
+			         }
+			      }
+			      return minD;
+			   }
+
+			 public class passArraytomethodD {
+			 public static void mainD (String args[]) {
+			      Scanner sc = new Scanner (System.in);
+				
+			      int minDB = 0;
+		          int modDB = 0;
+		          int sevDB = 0;
+			      System.out.print("Enter total number of students who have depression : ");
+			      int size = sc.nextInt();
+			      int[] myArray = new int[size];
+			      System.out.println("Enter their score : ");
+
+			      for(int i=0; i<size; i++) {
+			    	 System.out.print("Result for the " + (i + 1) + " student (0-20) = ");
+			         myArray[i] = sc.nextInt();
+			         
+			         if (myArray[i] <= 6) {
+			        	 minDB += 1;
+		        	     }
+		            else if (myArray[i] <= 12 ) {
+		            	 modDB += 1;}
+		            else {
+		            	 sevDB += 1;}
+			      }
+			      
+			      
+			      medical m = new medical();
+			      System.out.println();
+				  System.out.println(minDB + "/" + "6 students in School of Business has minimal depression");
+				  System.out.println(modDB + "/" + "6 students in School of Business has moderate depression");
+				  System.out.println(sevDB + "/" + "6 students in School of Business has severe depression");
+				  System.out.println();
+			      System.out.println("The largest score : "+ m.maxD(myArray));
+			      System.out.println("The lowest score  : "+ m.minD(myArray));
+
+			   }
+
+		}    
+        
+
+	    public static void StudentAnxiety() {
+			String[][] Business = {{"Nabila", "Ching Mei", "Siti", "Kasim", "Printhaa"},
+							       {"11", "4", "5", "3", "7"}};
+
+			
+			System.out.println("Here are result for students in School of Business in anxiety test");
+			System.out.println();
+
+			System.out.println("1.Score for " + Business[0][0] + ".....= " + Business[1][0]);
+			System.out.println("2.Score for " + Business[0][1] + "..= " + Business[1][1]);
+			System.out.println("3.Score for " + Business[0][2] + ".......= " + Business[1][2]);
+			System.out.println("4.Score for " + Business[0][3] + "......= " + Business[1][3]);
+			System.out.println("5.Score for " + Business[0][4] + "...= " + Business[1][4]);
+			System.out.println();
+
+			
+			}
+
+	    public static void StudentDepress() {
+			String[][] Business = {{"Aisyah", "Theva", "Sarah", "Kamal", "Aiman", "Mei ying"},
+							       {"10", "11", "7", "5", "3", "2"}};
+
+			
+			System.out.println("Here are result for students in School of Business in depression test");
+			System.out.println();
+
+			System.out.println("1.Score for " + Business[0][0] + ".....= " + Business[1][0]);
+			System.out.println("2.Score for " + Business[0][1] + "......= " + Business[1][1]);
+			System.out.println("3.Score for " + Business[0][2] + "......= " + Business[1][2]);
+			System.out.println("4.Score for " + Business[0][3] + "......= " + Business[1][3]);
+			System.out.println("5.Score for " + Business[0][4] + "......= " + Business[1][4]);
+			System.out.println("6.Score for " + Business[0][5] + "...= " + Business[1][5]);
+			System.out.println();
+
+}
+	    }
+      
+//OUTPUT
+
+This program will help you to calculate number of students of different school
+
+Based on the survey: 
+                    -Anxiety test    = 25.0%
+                    -Depression test = 32.0%
+                    -Anxiety test (School of Computing)     = 2.25%
+                    -Anxiety test (School of Accounting)    = 1.50%
+                    -Depression test (School of Law)        = 3.52%
+                    -Depression test (School of Computing)  = 2.88%
+
+Enter percentage of students have anxiety in School of Computing  = 2.25
+Enter percentage of students have anxiety in School of Accounting = 1.5
+
+Percentage of students in School of Computing who have anxiety  = 2.25%
+Percentage of students in School of Accounting who have anxiety = 1.50%
+Percentage of students in School of Law who have anxiety        = 1.25%
+Percentage of students in School of Business who have anxiety   = 1.25%
+
+Enter percentage of students have depression in School of Law       = 3.52
+Enter percentage of students have depression in School of Computing = 2.88
+
+Percentage of students in School of Law who have depression          = 3.52%
+Percentage of students in School of Computing who have depression    = 2.88%
+Percentage of students in School of Business who have depression     = 1.92%
+Percentage of students in School of Accounting who have depression   = 1.92%
+
+Here is the result : 
+ 
+Anxiety Test
+ 
+ ----------------------  ---------------------------  --------------------------  -----------------  --------------- 
+|        School        || Percentage of students(%) || Total Number of students || Female students || Male students |
+|     School of Law    ||            1.25           ||            5             ||        5        ||        0      |
+|  School of Computing ||            2.25           ||            9             ||        6        ||        3      |
+|  School of Business  ||            1.25           ||            5             ||        4        ||        1      |
+| School of Accounting ||            1.5            ||            6             ||        4        ||        2      |
+ ----------------------  ---------------------------  --------------------------  -----------------  --------------- 
+ 
+Depression Test
+ 
+ ----------------------  ---------------------------  --------------------------  -----------------  --------------- 
+|        School        || Percentage of students(%) || Total Number of students || Female students || Male students |
+|     School of Law    ||            3.52           ||            11            ||        7        ||        4      |
+|  School of Computing ||            2.88           ||            9             ||        5        ||        4      |
+|  School of Business  ||            1.92           ||            6             ||        4        ||        2      |
+| School of Accounting ||            1.92           ||            6             ||        3        ||        3      |
+ ----------------------  ---------------------------  --------------------------  -----------------  --------------- 
+Data below show the level of anxiety and depression of a student
+Anxiety level    : 
+                 0-5   -> minimal anxiety
+                 6-10  -> moderate anxiety
+                 11-20 -> severe anxiety
+
+Depression level : 
+                 1-6   -> minimal depression
+                 7-12  -> moderate depression
+                 13-20 -> severe depression
+
+Based on the table:
+Here are result for students in School of Business in anxiety test
+
+1.Score for Nabila.....= 11
+2.Score for Ching Mei..= 4
+3.Score for Siti.......= 5
+4.Score for Kasim......= 3
+5.Score for Printhaa...= 7
+
+Enter total number of students who have anxiety : 5
+Enter their score : 
+Result for the 1 student (0-20) = 11
+Result for the 2 student (0-20) = 4
+Result for the 3 student (0-20) = 5
+Result for the 4 student (0-20) = 3
+Result for the 5 student (0-20) = 7
+
+3/5 students in School of Business has minimal anxiety
+1/5 students in School of Business has moderate anxiety
+1/5 students in School of Business has severe anxiety
+
+The largest score : 11
+The lowest score  : 3
+
+Here are result for students in School of Business in depression test
+
+1.Score for Aisyah.....= 10
+2.Score for Theva......= 11
+3.Score for Sarah......= 7
+4.Score for Kamal......= 5
+5.Score for Aiman......= 3
+6.Score for Mei ying...= 2
+
+Enter total number of students who have depression : 6
+Enter their score : 
+Result for the 1 student (0-20) = 10
+Result for the 2 student (0-20) = 11
+Result for the 3 student (0-20) = 7
+Result for the 4 student (0-20) = 5
+Result for the 5 student (0-20) = 3
+Result for the 6 student (0-20) = 2
+
+3/6 students in School of Business has minimal depression
+3/6 students in School of Business has moderate depression
+0/6 students in School of Business has severe depression
+
+The largest score : 11
+The lowest score  : 2
