@@ -1,0 +1,72 @@
+//CODING
+
+import java.util.Scanner;
+public class MainMenu {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner menu=new Scanner (System.in);
+		char choices;
+		
+		do {
+		
+			System.out.println ("==MAIN MENU==");
+			int [] menu1= {1,2,3,4,5};
+			String [] menu2= {"Employees Salary","Student Facilities","Course Registration","Library Fees and Charge","Medical Survey"};
+			System.out.println (menu1[0]+". "+menu2[0]);
+			System.out.println (menu1[1]+". "+menu2[1]);
+			System.out.println (menu1[2]+". "+menu2[2]);
+			System.out.println (menu1[3]+". "+menu2[3]);
+			System.out.println (menu1[4]+". "+menu2[4]);
+			System.out.println ("Please choose the service.");
+			int service=menu.nextInt();
+		
+				if(service==1) {
+		
+					employees e = new employees();
+					e.main(args);
+				}
+				else if(service==2) {
+					student s = new student();
+					s.main(args);
+				}
+				else if(service==3) {
+					course c = new course();
+					c.main(args);
+				}
+				else if(service==4) {
+					library l = new library();
+					l.main(args);
+				}
+				else if(service==5) {
+					medical m = new medical();
+					m.main(args);
+				
+				}
+				else {
+					System.out.println("Invalid service! Please enter the right number.");
+				}
+				
+				System.out.println();
+				System.out.println("If you want to return to main menu. Enter y.");
+				System.out.println("If you do not want to return to main menu. Enter n.");
+				System.out.println("YES=y		NO=n");
+				choices=menu.next().charAt(0);
+				
+				
+		}
+		while (choices=='y' || choices=='Y');
+			
+	}
+
+}
+
+//OUTPUT
+==MAIN MENU==
+1. Employees Salary
+2. Student Facilities
+3. Course Registration
+4. Library Fees and Charge
+5. Medical Survey
+Please choose the service.
